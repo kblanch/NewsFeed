@@ -22,7 +22,9 @@ app.use(bodyParser.urlencoded({
 //Public is a static directory
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://heroku_zz9r5vfc:amifl05tliq5ccibiae41ajlkv@ds139984.mlab.com:39984/heroku_zz9r5vfc");
+mongoose.connect("mongodb://heroku_zz9r5vfc:amifl05tliq5ccibiae41ajlkv@ds139984.mlab.com:39984/heroku_zz9r5vfc", {
+  useMongoClient: true,
+});
 //mongoose.connect("mongodb://localhost/newsfeedtest");
 var db = mongoose.connection;
 
